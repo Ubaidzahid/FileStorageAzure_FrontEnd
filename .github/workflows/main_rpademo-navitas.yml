@@ -40,4 +40,4 @@ jobs:
           app-name: 'rpademo-navitas'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AF0B5BB15A3F4C409F74DAB3BD14DD08 }}
-          package: ./dist/posts
+          package: dist/posts
