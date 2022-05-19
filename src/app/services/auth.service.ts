@@ -7,13 +7,13 @@ import { first, catchError, tap } from "rxjs/operators";
 
 import { User } from "../models/User";
 import { ErrorHandlerService } from "./error-handler.service";
-
+import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: "root",
 })
 export class AuthService {
   
-  private url = "environment.URL/auth";
+  private url = environment.URL + "/auth";
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
   userId: Pick<User, "id">;
 
