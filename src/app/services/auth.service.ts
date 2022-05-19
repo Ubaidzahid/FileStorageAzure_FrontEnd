@@ -13,7 +13,7 @@ import { ErrorHandlerService } from "./error-handler.service";
 })
 export class AuthService {
   
-  private url = "https://api-rpademo-navitas.azurewebsites.net/auth";
+  private url = "environment.URL/auth";
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
   userId: Pick<User, "id">;
 
