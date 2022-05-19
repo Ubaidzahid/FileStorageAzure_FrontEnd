@@ -15,7 +15,7 @@ import {
 } from "./azure.storage";
 
 @Component({
-  selector: "app-root",
+  selector: "app-azure-component",
   templateUrl: "./azure.component.html",
 })
 export class AzureComponent implements OnInit {
