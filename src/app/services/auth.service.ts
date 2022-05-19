@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 
 import { Observable, BehaviorSubject } from "rxjs";
 import { first, catchError, tap } from "rxjs/operators";
-
+import { environment } from "src/environments/environment";
 import { User } from "../models/User";
 import { ErrorHandlerService } from "./error-handler.service";
 
@@ -12,8 +12,8 @@ import { ErrorHandlerService } from "./error-handler.service";
   providedIn: "root",
 })
 export class AuthService {
-  private url = "http://localhost:3000/auth";
- //private url = environment.URL + "/auth";
+  //private url = "http://localhost:3000/auth";
+ private url = environment.URL + "/auth";
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
   userId: Pick<User, "id">;
 

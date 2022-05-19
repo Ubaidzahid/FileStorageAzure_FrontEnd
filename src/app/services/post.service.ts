@@ -7,13 +7,13 @@ import { catchError, first } from "rxjs/operators";
 import { Post } from "../models/Post";
 import { User } from "../models/User";
 import { ErrorHandlerService } from "./error-handler.service";
-
+import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: "root",
 })
 export class PostService {
-  private url = "http://localhost:3000/post";
- //private url:any = environment.URL + "/post";
+  //private url = "http://localhost:3000/post";
+ private url:any = environment.URL + "/post";
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
   };

@@ -11,11 +11,9 @@ import { AzureComponent } from "./components/azure/azure.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  //{ path: "home", component: AzureComponent, canActivate: [AuthGuard] },
-  { path: "home", component: AzureComponent },
+  { path: "home", component: AzureComponent},
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
-  
   { path: "**", redirectTo: "" },
 ];
 
