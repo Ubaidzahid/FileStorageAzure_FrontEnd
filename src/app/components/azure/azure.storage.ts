@@ -20,7 +20,7 @@ export interface CONTENT {
 
 
 export async function getContainers() {
-    debugger;
+    // debugger;
   let containers = [];
   let iter = blobServiceClient.listContainers();
   let containerItem = await iter.next();

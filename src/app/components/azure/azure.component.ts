@@ -8,7 +8,7 @@ import {
   listBlob,
   BLOBItem,
   CONTENT,
-  uploadFile, 
+  uploadFile,
   deleteBlob,
   deleteContainerV,
   downloadBlob
@@ -34,7 +34,7 @@ export class AzureComponent implements OnInit {
 
   async getContainers() {
     getContainers().then((res: Array<string>) => {
-      debugger;
+      // debugger;
       this.containers = res;
       this.changeDetection.detectChanges();
 
@@ -43,7 +43,7 @@ export class AzureComponent implements OnInit {
 
   upload(file: any) {
     console.log(file.files.length);
-    debugger;
+    // debugger;
     if (file.files.length > 0) {
       [...file.files].forEach((file: any) => {
         let content: CONTENT = {

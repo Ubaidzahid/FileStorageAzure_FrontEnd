@@ -13,7 +13,7 @@ import { environment } from "src/environments/environment";
 })
 export class PostService {
   //private url = "http://localhost:3000/post";
- private url:any = environment.URL + "/post";
+ private url:any = environment.URL + "/post/";
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
   };
@@ -31,14 +31,40 @@ export class PostService {
       );
   }
 
+  list(): Observable<any> {
+    console.log('list')
+    const url = `${this.url}`
+    return this.http.get<any>(url)
+}
+delete(id): Observable<any> {
+  const url = `${this.url}/${id}`
+  return this.http.delete<any>(url)
+}
+
+
+  // createPost(
+  //   formData: Partial<Post>,
+  //   userId: Pick<User, "id">
+  // ): Observable<Post> {
+  //   return this.http
+  //     .post<Post>(
+  //       this.url,
+  //       { title: formData.title, body: formData.body, user: userId },
+  //       this.httpOptions
+  //     )
+  //     .pipe(
+  //       catchError(this.errorHandlerService.handleError<Post>("createPost"))
+  //     );
+  // }
+
   createPost(
-    formData: Partial<Post>,
-    userId: Pick<User, "id">
+    title,body,
+    user
   ): Observable<Post> {
     return this.http
       .post<Post>(
         this.url,
-        { title: formData.title, body: formData.body, user: userId },
+        { title, body, user },
         this.httpOptions
       )
       .pipe(

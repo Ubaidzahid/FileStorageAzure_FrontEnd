@@ -4,7 +4,7 @@
       <span>File Storage</span>
     </a>
   </span>
-  
+
   <span>
     <a
     class="home-class" id="home435"
@@ -16,13 +16,22 @@
     </a>
     <a
       class="login-class" id="login834"
+      *ngIf="!isAuthenticated"
       routerLinkActive="active-link"
       routerLink="/login"
     >
       <span>Login</span>
     </a>
+    <!-- <a
+    class="upload-class" id="upload983"
+    routerLinkActive="active-link"
+    routerLink="/create-post"
+  >
+    <span>Post</span>
+  </a> -->
     <a
       class="upload-class" id="upload983"
+      *ngIf="isAuthenticated"
       routerLinkActive="active-link"
       routerLink="/home"
     >

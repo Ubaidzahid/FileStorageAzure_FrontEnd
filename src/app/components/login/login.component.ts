@@ -10,7 +10,7 @@ import { AuthService } from "src/app/services/auth.service";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-
+// message:any;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
@@ -36,8 +36,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.authService
-      .login(this.loginForm.value.email, this.loginForm.value.password)
-      .subscribe();
+    const login =  this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
+
+      login.subscribe((resp: any): any => {
+        // if (resp.success === false) {
+
+          // this.message = resp;
+
+
+      });
   }
 }
